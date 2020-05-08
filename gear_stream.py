@@ -22,7 +22,7 @@ def addToGraphRunner(x):
         data = io.BytesIO(x['img'])
         dataM = imageio.imread(data).astype(dtype='float32')
         
-        newImg = (cv2.resize(dataM, (224, 224)) / 128) - 1
+        newImg = cv2.resize(dataM, (224, 224))
 
         l = np.asarray(newImg, dtype=np.float32)
         img_ba = bytearray(l.tobytes())
